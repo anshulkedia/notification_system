@@ -1,0 +1,60 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# dotenv environment variables
+.env
+.env.*
+
+# Database
+*.sqlite
+*.db
+*.tgz
+dump.rdb
+data/
+mongodb/
+
+# Coverage and test reports
+coverage/
+.nyc_output/
+test-output/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific
+.vscode/
+.idea/
+
+# Build
+dist/
+build/
+
+# Optional for Docker
+docker-compose.override.yml
+
+# Optional for GraphQL
+.graphqlconfig
+.graphqlrc
+.graphqlrc.js
+
+# Nodemon
+nodemon-debug.json
+
+# Others
+*.bak
+*.swp
+*.swo
