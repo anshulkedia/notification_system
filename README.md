@@ -26,7 +26,7 @@ This system is designed using modular microservices with asynchronous communicat
 
 ---
 
-### 🔍 Service Details
+### Service Details
 
 - **User-service**  
   ➤ Go to [`/user-service/README.md`](user-service/README.md)
@@ -42,7 +42,7 @@ This system is designed using modular microservices with asynchronous communicat
 
 ---
 
-## 🔁 Communication Flow
+## Communication Flow
 
 ```
 [SCHEDULER] ───(order/promo event)────► [RABBITMQ] ───(consume)───► [NOTIFICATION SERVICE]
@@ -52,7 +52,7 @@ This system is designed using modular microservices with asynchronous communicat
 
 ---
 
-## 🗃️ Database Design (MongoDB)
+## Database Design (MongoDB)
 
 **Notification schema:**
 
