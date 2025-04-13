@@ -23,6 +23,7 @@ This system is designed using modular microservices with asynchronous communicat
 2. **notification-service**  
 3. **scheduler-service**  
 4. **RabbitMQ** (message broker)
+5. **GraphQL**
 
 ---
 
@@ -39,6 +40,10 @@ This system is designed using modular microservices with asynchronous communicat
 
 - **RabbitMQ**  
   ➤ Setup instructions included in [`/scheduler-service/README.md`](scheduler-service/README.md)
+
+- **GraphQL**  
+  ➤ Setup instructions included in [`/graphql-gateway/README.md`](graphql-gateway/README.md)
+
 
 ---
 
