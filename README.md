@@ -1,54 +1,62 @@
-Personalized Notification System 
+# 📬 Personalized Notification System
+
 A microservice-based backend system for sending personalized, scheduled, and event-driven notifications on an e-commerce platform. The system handles sending personalized notifications to users based on their preferences and activity on the platform.
 
-Tech stack
-    Node.js + Express.js
-    MongoDB (with Mongoose)
-    RabbitMQ (via amqplib)
-    node-cron for scheduling
-	Docker for containerization (optional)
-	Postman for API testing
+---
 
-System Architecture:
-This system is designed using modular microservices with asynchronous communication. The different components are :
-1. user-service
-2. notification-service
-3. scheduler-service
-5. RabbitMQ (Message broker)
+## 🛠 Tech Stack
 
-1. User-service
-This handles registering a new user, login for an existing user, fetching the profile details of users and managing user preferences(what kind of notifications they would prefer to recieve). JWT-based authentication using bearer tokens has been implemented.
+- Node.js + Express.js  
+- MongoDB (with Mongoose)  
+- RabbitMQ (via amqplib)  
+- node-cron for scheduling  
+- Docker for containerization (optional)  
+- Postman for API testing  
 
-Endpoints:
-POST / register
-POST / login
-GET /me
-PUT /preferences
+---
 
-2. Notification-service
-Responsible for storing notifications, fetching unread notifications(can fetch read notifications too), marking notifications as read, and saving recommendation-based notifications as well. Used MongoDB for storage, REST APIs for interactions, and RabbitMQ consumer for event-driven updates.
+## 🧱 System Architecture
 
-Endpoints:
-POST /api/notifications
-GET /api/notifications//unread/:userId 
-PATCH /api/notifications/:id/read
-POST /api/notifications/recommendations/:userId
-GET /api/notifications/getall/:userId
+This system is designed using modular microservices with asynchronous communication. The different components are:
 
-3. Scheduler-service
-Uses node-cron to schedule events periodically, sends mock user updates and promotional messages and pushes messages to RabbitMQ queue for notification-service to consume. 
+1. **user-service**  
+2. **notification-service**  
+3. **scheduler-service**  
+4. **RabbitMQ** (message broker)
 
-4. RabbitMQ (message broker)
-It is used for decoupled communication between services, publishing events like order status updated, promotion send and recommendation create. These messages are consumed by notification service.
+---
 
-Communication flow:
+### 🔍 Service Details
 
+- **User-service**  
+  ➤ Go to [`/user-service/README.md`](user-service/README.md)
+
+- **Notification-service**  
+  ➤ Go to [`/notification-service/README.md`](notification-service/README.md)
+
+- **Scheduler-service**  
+  ➤ Go to [`/scheduler-service/README.md`](scheduler-service/README.md)
+
+- **RabbitMQ**  
+  ➤ Setup instructions included in [`/scheduler-service/README.md`](scheduler-service/README.md)
+
+---
+
+## 🔁 Communication Flow
+
+```
 [SCHEDULER] ───(order/promo event)────► [RABBITMQ] ───(consume)───► [NOTIFICATION SERVICE]
        ▲                                                       ▼
        └─────(trigger recommendation manually)────► [POST /recommendations/:userId]
+```
 
-Database design(MongoDB):
-Notification schema-
+---
+
+## 🗃️ Database Design (MongoDB)
+
+**Notification schema:**
+
+```json
 {
   "_id": ObjectId,
   "userId": String,
@@ -57,15 +65,28 @@ Notification schema-
   "sentAt": Date,
   "read": Boolean
 }
+```
 
+---
 
+## 🚀 Running the Project
 
+1. Clone the repo  
+2. Install dependencies in each microservice  
+3. Start RabbitMQ:  
+   ```bash
+   docker run -d --hostname rabbitmq --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+   ```
 
+4. Start services:
 
+   ```bash
+   # In user-service/
+   npm start
 
+   # In notification-service/
+   npm start
 
-
-
-
-
-
+   # In scheduler-service/
+   npm start
+   ```
