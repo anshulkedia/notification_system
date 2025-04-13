@@ -96,7 +96,7 @@ This system is designed using modular microservices with asynchronous communicat
    npm start
    ```
 
-postman collections links for testing
+## postman collections links for testing
 
 [`notification-service testing`](https://www.postman.com/spacecraft-astronomer-82181428/personalized-notification-system/collection/e2775lr/notification-service-testing?action=share&creator=43754730)
 [`user-service testing`](https://www.postman.com/spacecraft-astronomer-82181428/personalized-notification-system/collection/rcoeglc/user-service-testing?action=share&creator=43754730)
