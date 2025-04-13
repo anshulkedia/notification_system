@@ -1,10 +1,10 @@
-# 📬 Personalized Notification System
+# Personalized Notification System
 
 A microservice-based backend system for sending personalized, scheduled, and event-driven notifications on an e-commerce platform. The system handles sending personalized notifications to users based on their preferences and activity on the platform.
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - Node.js + Express.js  
 - MongoDB (with Mongoose)  
@@ -15,7 +15,7 @@ A microservice-based backend system for sending personalized, scheduled, and eve
 
 ---
 
-## 🧱 System Architecture
+## System Architecture
 
 This system is designed using modular microservices with asynchronous communication. The different components are:
 
@@ -69,7 +69,7 @@ This system is designed using modular microservices with asynchronous communicat
 
 ---
 
-## 🚀 Running the Project
+## Running the Project
 
 1. Clone the repo  
 2. Install dependencies in each microservice  
